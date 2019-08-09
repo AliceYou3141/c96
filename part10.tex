@@ -1,0 +1,28 @@
+\chapter{メールのセキュリティ}
+
+\section{メールを受け取るかの判断}
+
+\subsection{ブラックリスト}
+
+ブラックリスト方式は、そのメールサーバで受信を拒否するメールアドレス、ドメイン名を記述しておきます。受信したメールは、全てそのブラックリストと比較し、ブラックリストにあった名前であれば、受信を拒否するという方式です。
+
+Postfixでのブラックリスト方式の受信拒否は、smtpd\_sender\_restrictionsに、条件check\_sender\_restrictionsの値として、Postfixtテーブルを指定します。
+
+\begin{verbatim}
+smtpd_sender_restrictions = 
+    check_sender_access hash:/path/to/table
+\end{verbatim}
+
+ハッシュ形式のPostfixテーブルでは、
+
+\subsection{RBL}
+
+\subsection{S25R}
+
+\subsection{グレイリスティング}
+
+\section{受け取ったメールのチェック}
+
+\subsection{点ぷっふぁいるのウィルスチェック}
+
+\subsection{メールの本文解析}
